@@ -21,7 +21,6 @@ def parse_dir_path(args):
     return dir_path
 
 def main(args: List[str] = sys.argv[1:]):
-    print(os.environ.get('XX', 'origin/main'))
     # If no clang-tidy-diff binary, exit with 1.
     clang_tidy_diff_bin = 'clang-tidy-diff'
     if shutil.which(clang_tidy_diff_bin) is None:

@@ -1,0 +1,9 @@
+-   id: clang-tidy-diff
+    name: clang-tidy-diff
+    description: 'This hook runs clang-tidy-diff.'
+    entry: clang-tidy-diff-hook -quiet -fix
+    args: ['-path', 'build']
+    pass_filenames: false
+    language: python
+    types_or: [c++, c, cuda, c#, objective-c]
+    minimum_pre_commit_version: '2.9.2'

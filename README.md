@@ -13,5 +13,7 @@ It does `git diff [origin/main | PRE_COMMIT_FROM_REF] -U0 --no-prefix | clang-ti
         args: ['-clang-tidy-binary', 'clang-tidy-14', '-path', 'build']
     # Do whenever to add headers to build/compile_commands.json
     -   id: add-headers
+        # path to directory containing compile_commands
+        args: ['-path', 'build']
         stages: [manual]
 ```

@@ -7,3 +7,12 @@
     language: python
     types_or: [c++, c, cuda, c#, objective-c]
     minimum_pre_commit_version: '2.9.2'
+-   id: add-headers
+    name: add-headers
+    description: 'Adds headers to build/compile_commands.json'
+    entry: sh -c 'compdb -p build/ list > compile_commands.json && mv compile_commands.json build/compile_commands.json'
+    always_run: true
+    pass_filenames: false
+    language: system
+    stages: [manual]
+    minimum_pre_commit_version: '2.9.2'

@@ -1,5 +1,5 @@
 # clang-tidy-diff-hook
-A [pre-commit](https://pre-commit.com/) hook for clang-tidy. 
+A [pre-commit](https://pre-commit.com/) hook for clang-tidy.
 
 It does `git diff [origin/main | PRE_COMMIT_FROM_REF] -U0 --no-prefix | clang-tidy-diff -quiet -fix -path build`.
 
@@ -11,4 +11,7 @@ It does `git diff [origin/main | PRE_COMMIT_FROM_REF] -U0 --no-prefix | clang-ti
     hooks:
     -   id: clang-tidy-diff
         args: ['-clang-tidy-binary', 'clang-tidy-14', '-path', 'build']
+    # Do whenever to add headers to build/compile_commands.json
+    -   id: add-headers
+        stages: [manual]
 ```

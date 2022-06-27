@@ -29,7 +29,8 @@ def main(args: List[str] = sys.argv[1:]):
     # Strip useless messages.
     output = re.sub(r"\s*No relevant changes found.\s*", "", output)
     output = re.sub(r"\s*[\d]+ warnings generated\.\s*", "", output)
-    if len(output) > 0:
+    # If any error exists, then exit with 1.
+    if re.search(r": error:", output):
         exit_with(output, 1)
 
 if __name__ == "__main__":
